@@ -1,12 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import FrameSection from './FrameSection';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const App = () => {
+    return (
+        <div className="ui container comments">
+
+            <FrameSection>
+                <h3>It is a bit tricky!</h3>
+                <h4>Are u sure ?</h4>
+                <ul>
+                    <li>haha</li>
+                    <li>hehe</li>
+                    <li>helhel</li>
+                </ul>
+            </FrameSection>
+
+
+            <FrameSection>
+                <CommentDetail avator={faker.image.avatar()} author="Aung Myo Myat" date={faker.date.weekday()} text={faker.address.streetAddress()} />
+            </FrameSection>
+
+            <FrameSection>
+                <CommentDetail avator={faker.image.avatar()} author="Aung Myo Myat" date={faker.date.weekday()} text={faker.address.streetAddress()} />
+            </FrameSection>
+
+            <FrameSection>
+                <CommentDetail avator={faker.image.avatar()} author="Aung Myo Myat" date={faker.date.weekday()} text={faker.address.streetAddress()} />
+            </FrameSection>
+
+            <FrameSection>
+                <CommentDetail avator={faker.image.avatar()} author="Aung Myo Myat" date={faker.date.weekday()} text={faker.address.streetAddress()} />
+            </FrameSection>
+
+
+            <FrameSection>
+                <h3>It is a bit Obivious!</h3>
+                <h4>Are u sure ?</h4>
+                <ol>
+                    <li>haha</li>
+                    <li>hehe</li>
+                    <li>helhel</li>
+                </ol>
+            </FrameSection>
+
+        </div>
+    );
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));
